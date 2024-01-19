@@ -1,0 +1,17 @@
+name: template-provision-test
+
+on: 
+  push:
+    branches: ["main"]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: kota65535/github-template-rename-action@v1.2.0
+        with:
+          github-token: ${{ github.token }}
+          from-name: _template_Service
+          to-name: RealService
+          dry-run: true
